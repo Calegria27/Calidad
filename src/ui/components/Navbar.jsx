@@ -28,9 +28,6 @@ export const Navbar = () => {
 
 
             <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end">
-                <span className='nav-item nav-link text-primary p-3'>
-                    {user}
-                </span>
                 <button className="navbar-nav ml-auto"
                 onClick={onLogout}>
                     <span 
