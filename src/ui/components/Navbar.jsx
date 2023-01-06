@@ -18,12 +18,13 @@ export const Navbar = () => {
     return (
         <nav className="navbar navbar-expand-sm navbar-dark bg-dark p-3">
             
-            <Link 
+            <h1 
                 className="navbar-brand" 
                 to="/login"
             >
-                Independencia
-            </Link>
+                Sistema Calidad Independencia
+            </h1>
+
 
 
             <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end">
