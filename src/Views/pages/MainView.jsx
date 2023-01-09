@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Authcontext } from '../../Auth/context/Authcontext';
 import Dropdown from 'react-bootstrap/Dropdown';
 import axios from 'axios'
+import Modelos from '../../ui/components/Dropdown_Modelos';
 
 
 
@@ -21,13 +22,14 @@ const MainView = () => {
   const [dataempresas, setDataempresas] = useState(null);
   const [dataobras, setDataobras] = useState(null);
   const [datasectores, setDataSectores] = useState(null);
+  const [dataUfisica, setDataUfisica] = useState(null);
   const [selectedOption, setSelectedOption] = useState("Seleccione empresa");
   const [selectedOptionO, setSelectedOptionO] = useState("");
   const [selectedOptionName, setSelectedOptionName] = useState("Seleccione empresa");
   const [selectedOptionNameObra, setSelectedOptionNameObra] = useState("Seleccione obra");
   const [isVisible, setIsVisible] = useState(false);
   const [selectedSector, setSelectedSector] = useState("")
-  const [selecteduFisica,setSelectedUFisica]=useState("")
+  const [selecteduFisica, setSelectedUFisica] = useState("")
 
 
   useEffect(() => {
@@ -54,13 +56,15 @@ const MainView = () => {
       })
   }, [selectedOptionO])
 
-  useEffect(()=>{
-    const data ={CtoEmpresa: selectedOption, CtoCodigo: selectedOptionO, Sector:selectedSector}
-    axios.post(Ufisicaurl,data)
-    .then((response)=>{
-      console.log(response)
-    }
-   )
+  useEffect(() => {
+    const data = { CtoEmpresa: selectedOption, CtoCodigo: selectedOptionO, Sector: selectedSector.toString() }
+    console.log(data)
+    axios.post(Ufisicaurl, data)
+      .then((response) => {
+        console.log(response)
+        setDataUfisica(response.data)
+      }
+      )
   }, [selectedSector])
 
 
@@ -86,7 +90,10 @@ const MainView = () => {
   const handleOptionClickSector = (option) => {
     setSelectedSector(option)
   }
-
+  const handleOptionUfisica = (option) => {
+    setSelectedUFisica(option)
+    console.log(option)
+  }
   const empresas = dataempresas
     ? Object.entries(dataempresas).map(([key, value]) => (
 
@@ -113,6 +120,17 @@ const MainView = () => {
     ))
 
     : null;
+
+  const unidadesFisicas = dataUfisica
+    ? Object.entries(dataUfisica).map(([key, value]) => (
+
+      <Dropdown.Item key={key} onClick={() => handleOptionUfisica(dataUfisica[key]["unidadfisica"])}
+      >{`${dataUfisica[key]["unidadfisica"]}`}</Dropdown.Item>
+    ))
+
+    : null;
+  
+  const data_fm={CtoEmpresa:selectedOption,CtoCodigo:selectedOptionO,Sector:selectedSector.toString(),uFisica:selecteduFisica}
 
   return (
     <div>
@@ -150,16 +168,18 @@ const MainView = () => {
               {sectores}
             </Dropdown.Menu>
           </Dropdown>
-          { selectedSector!==""&&
+          {selectedSector !== "" &&
             <div className='containerapear'>
               <Dropdown>
                 <Dropdown.Toggle>
-                  {selectedSector}
+                  {selecteduFisica}
                 </Dropdown.Toggle>
-                <Dropdown.Menu>
-                  {sectores}
+                <Dropdown.Menu style={{ overflowY: 'scroll', maxHeight: '200px' }}>
+                  {unidadesFisicas}
                 </Dropdown.Menu>
+                  
               </Dropdown>
+              <Modelos object={data_fm}/>
             </div>
 
           }
