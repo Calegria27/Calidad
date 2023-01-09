@@ -35,12 +35,25 @@ const Dropdown_UnidadesFisicas = (props) => {
           )
       }, [object.Sector])
 
+    useEffect(() => {
+        setSelectedUFisica("")
+    }, [object.CtoEmpresa]);
+
+    useEffect(() => {
+        setSelectedUFisica("")
+    }, [object.CtoCodigo]);
+
+    useEffect(() => {
+        setSelectedUFisica("")
+    }, [object.Sector]);
+
+
     const data_fm ={CtoEmpresa: object.CtoEmpresa, CtoCodigo: object.CtoCodigo, Sector: object.Sector,uFisica:selecteduFisica}
     return (
         <div>
             {object.Sector !== "" &&
-                <div className='containerapear'>
-                    <Dropdown>
+                <div className="dropdown-unidades">
+                    <Dropdown >
                         <Dropdown.Toggle>
                             {selecteduFisica}
                         </Dropdown.Toggle>

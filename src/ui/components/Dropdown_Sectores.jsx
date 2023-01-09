@@ -21,6 +21,14 @@ const Dropdown_Sectores = (props) => {
           })
       }, [object.CtoCodigo])
 
+    useEffect(() => {
+        setSelectedSector("")
+    }, [object.CtoEmpresa]);
+
+    useEffect(() => {
+        setSelectedSector("")
+    }, [object.CtoCodigo]);
+
     
       const sectores = datasectores
     ? Object.entries(datasectores).map(([key, value]) => (
@@ -36,8 +44,8 @@ const Dropdown_Sectores = (props) => {
     return (
         <div>
             {object.isVisible &&
-                <div className='containerapear'>
-                    <Dropdown>
+                <div className='dropdown-sectores'>
+                    <Dropdown className='dropdown-sectores'>
                         <Dropdown.Toggle>
                             {selectedSector}
                         </Dropdown.Toggle>
@@ -45,10 +53,9 @@ const Dropdown_Sectores = (props) => {
                             {sectores}
                         </Dropdown.Menu>
                     </Dropdown>
-
-                    <Dropdown_UnidadesFisicas object={data_Ufisicas} />
+                   <Dropdown_UnidadesFisicas object={data_Ufisicas} />
                 </div>
-
+ 
             }
         </div>
     )

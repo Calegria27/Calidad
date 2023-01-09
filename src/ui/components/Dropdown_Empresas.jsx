@@ -42,9 +42,8 @@ const Dropdown_Empresas = () => {
 
 
     return (
-        <div>
-            <div className='container-dropdown' style={{ display: "inline-block" }}>
-                <Dropdown>
+            <div className='container-dropdown'>
+                <Dropdown className='dropdown-empresa'>
                     <Dropdown.Toggle title={selectedEmpresa} variant="success" id="dropdown-basic">
                         {selectedOptionName}
                     </Dropdown.Toggle>
@@ -55,8 +54,8 @@ const Dropdown_Empresas = () => {
                 </Dropdown>
                 <Dropdown_Obras object={data_Obras} />
             </div>
+            
 
-        </div>
     )
 }
 

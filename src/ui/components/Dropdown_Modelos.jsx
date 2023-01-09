@@ -23,6 +23,22 @@ const Modelos = (props) => {
             });
     }, [object.uFisica ]);
 
+    useEffect(() => {
+        SetSelectedModelo("")
+    }, [object.CtoEmpresa]);
+
+    useEffect(() => {
+        SetSelectedModelo("")
+    }, [object.CtoCodigo]);
+
+    useEffect(() => {
+        SetSelectedModelo("")
+    }, [object.Sector]);
+
+    useEffect(() => {
+        SetSelectedModelo("")
+    }, [object.uFisica]);
+
     const modelo = dataModelo
         ? Object.entries(dataModelo).map(([key, value]) => (
 
@@ -42,7 +58,7 @@ const Modelos = (props) => {
         <div>
             {object.uFisica !== "" &&
                 <div>
-                    <Dropdown>
+                    <Dropdown className='dropdown-modelos'>
                         <Dropdown.Toggle>
                             {selectedModelo}
                         </Dropdown.Toggle>

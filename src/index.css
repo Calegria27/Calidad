@@ -1,0 +1,55 @@
+* {
+    font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+  
+    color-scheme: light dark;
+  
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+  }
+
+.container-tittle{
+    color:black;
+    border: 1px solid black;
+}
+
+.container-dropdown{
+    width: 95%;
+    align-items: left;
+    display: flex;
+}
+
+.dropdown-empresa{
+    padding:10px 10px 10px 10px;
+
+}
+
+.dropdown-obras{
+    display: flex;
+    padding:10px 10px 10px 10px;
+
+
+}
+
+.dropdown-sectores{
+    display: flex;
+    align-items: left;
+    padding-left: 10px;
+    
+    
+
+}
+
+.dropdown-unidades{
+    display: flex;
+    padding-left: 10px;
+}
+.dropdown-modelos{
+    display: flex;
+    padding-left: 10px;
+}
