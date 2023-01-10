@@ -40,7 +40,7 @@ const Dropdown_Sectores = (props) => {
     : null;
 
     
-   const data_Ufisicas= {CtoEmpresa: object.CtoEmpresa, CtoCodigo: object.CtoCodigo, Sector: selectedSector.toString()}
+   const data_Ufisicas= {CtoEmpresa: object.CtoEmpresa, CtoCodigo: object.CtoCodigo, Sector: selectedSector.toString(),setSelectedValue:object.setSelectedValue}
     return (
         <div>
             {object.isVisible &&

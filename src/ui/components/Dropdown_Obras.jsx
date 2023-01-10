@@ -6,7 +6,6 @@ import axios from 'axios';
 
 const Dropdown_Obras = (props) => {
     const { object } = props
-    console.log(object)
     const { user } = useContext(Authcontext);
     const url = "http://192.168.1.17/user/empresas/obras"
     const [selectedOptionNameObra, setSelectedOptionNameObra] = useState("Seleccione obra");
@@ -14,20 +13,17 @@ const Dropdown_Obras = (props) => {
     const [dataobras, setDataobras] = useState(null);
     const [isVisible, setIsVisible] = useState(object.isVisible);
 
-    const data_Sectores = { CtoEmpresa: object.CtoEmpresa, CtoCodigo: selectedObra, isVisible: isVisible }
+    const data_Sectores = { CtoEmpresa: object.CtoEmpresa, CtoCodigo: selectedObra, isVisible: isVisible,setSelectedValue:object.setSelectedValue}
 
     const handleOptionClickObra = (option, name) => {
-        console.log(option)
         setSelectedObra(option)
         setSelectedOptionNameObra(name)
-        console.log(isVisible)
         if (!isVisible) {
             setIsVisible(!isVisible)
-            console.log(isVisible)
         }
 
     }
-    console.log(object.CtoEmpresa, user)
+ 
     useEffect(() => {
         axios.post(url, { CtoEmpresa: object.CtoEmpresa, Usu_Cuenta: user })
             .then((response) => {
@@ -37,7 +33,6 @@ const Dropdown_Obras = (props) => {
 
     useEffect(() => {
         setSelectedOptionNameObra("Seleccione Obra")
-        setIsVisible(!isVisible)
     }, [object.CtoEmpresa]);
 
     const obras = dataobras

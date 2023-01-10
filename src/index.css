@@ -13,6 +13,10 @@
     -webkit-text-size-adjust: 100%;
   }
 
+.navbar{
+    width: 100%;
+}
+
 .container-tittle{
     color:black;
     border: 1px solid black;
@@ -52,4 +56,30 @@
 .dropdown-modelos{
     display: flex;
     padding-left: 10px;
+}
+
+
+@media (max-width: 600px) {
+ 
+        .dropdown-empresa{
+            display:list-item;
+        }
+
+}
+.container-cartillatarifado{
+    padding: 10px 10px 10px 10px;
+    border: 1px solid red;
+}
+.container-cartilla{
+    display: flex;
+    border: 1px solid blue;
+}
+
+.container-tarifado{
+    display: flex;
+    border: 1px solid blue;
+}
+
+.dropdown-cartillas{
+    padding-left: 20px;
 }

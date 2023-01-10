@@ -10,11 +10,10 @@ import Dropdown from 'react-bootstrap/Dropdown';
 
 const Modelos = (props) => {
     const url = "http://192.168.1.17/user/empresas/obras/sector/ufisica/modelo"
-    const [selectedModelo, SetSelectedModelo] = useState("Modelo")
+    const [selectedModelo, SetSelectedModelo] = useState("")
     const [dataModelo, SetDataModelo] = useState("")
-    const [selecteduFisica, setSelectedUFisica] = useState("")
     const { object } = props;
-
+    const setSelectedValue=object.setSelectedValue;
 
     useEffect(() => {
         axios.post(url, { CtoEmpresa: object.CtoEmpresa, CtoCodigo: object.CtoCodigo, Sector: object.Sector, uFisica: object.uFisica })
@@ -39,6 +38,7 @@ const Modelos = (props) => {
         SetSelectedModelo("")
     }, [object.uFisica]);
 
+
     const modelo = dataModelo
         ? Object.entries(dataModelo).map(([key, value]) => (
 
@@ -50,6 +50,8 @@ const Modelos = (props) => {
         : null;
     const handleOptionModelo = (option) => {
         SetSelectedModelo(option)
+        const data={modelo:option,CtoEmpresa: object.CtoEmpresa, CtoCodigo: object.CtoCodigo, Sector: object.Sector, uFisica: object.uFisica }
+        setSelectedValue( data)
     }
 
 

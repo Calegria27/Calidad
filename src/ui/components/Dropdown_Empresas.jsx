@@ -5,15 +5,15 @@ import Dropdown_Obras from './Dropdown_Obras';
 import axios from 'axios';
 
 
-const Dropdown_Empresas = () => {
-
+const Dropdown_Empresas = (props) => {
+    const  {setSelectedValue}  = props;
     const { user } = useContext(Authcontext);
     const url = "http://192.168.1.17/user/empresas"
     const [dataempresas, setDataempresas] = useState(null);
     const [selectedEmpresa, setSelectedEmpresa] = useState("Seleccione empresa");
     const [selectedOptionName, setSelectedOptionName] = useState("Seleccione empresa");
-    const [isVisible, setIsVisible] = useState(false);
-    const data_Obras= {CtoEmpresa:selectedEmpresa, isVisible:isVisible}
+    const [isVisible, setIsVisible] = useState(false);                           
+    const data_Obras= {CtoEmpresa:selectedEmpresa, isVisible:isVisible,setSelectedValue:setSelectedValue}
 
     useEffect(() => {
         axios.post(url, {}, { params: { item: user, } })

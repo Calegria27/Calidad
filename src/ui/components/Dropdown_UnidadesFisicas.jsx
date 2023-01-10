@@ -5,16 +5,13 @@ import Modelos from './Dropdown_Modelos'
 
 const Dropdown_UnidadesFisicas = (props) => {
     const {object}=props
-    console.log(object)
     const url = "http://192.168.1.17/user/empresas/obras/sector/ufisica"
     const [dataUfisica, setDataUfisica] = useState(null);
     const [selecteduFisica, setSelectedUFisica] = useState("")
-    console.log(object.Sector)
     
 
     const handleOptionUfisica = (option) => {
         setSelectedUFisica(option)
-        console.log(option)
       }
 
     const unidadesFisicas = dataUfisica
@@ -29,7 +26,6 @@ const Dropdown_UnidadesFisicas = (props) => {
     useEffect(() => {
         axios.post(url, {CtoEmpresa: object.CtoEmpresa, CtoCodigo: object.CtoCodigo, Sector: object.Sector})
           .then((response) => {
-            console.log(response)
             setDataUfisica(response.data)
           }
           )
@@ -48,7 +44,7 @@ const Dropdown_UnidadesFisicas = (props) => {
     }, [object.Sector]);
 
 
-    const data_fm ={CtoEmpresa: object.CtoEmpresa, CtoCodigo: object.CtoCodigo, Sector: object.Sector,uFisica:selecteduFisica}
+    const data_fm ={CtoEmpresa: object.CtoEmpresa, CtoCodigo: object.CtoCodigo, Sector: object.Sector,uFisica:selecteduFisica, setSelectedValue:object.setSelectedValue}
     return (
         <div>
             {object.Sector !== "" &&
