@@ -44,7 +44,8 @@ const Dropdown_Sectores = (props) => {
     return (
         <div>
             {object.isVisible &&
-                <div className='dropdown-sectores'>
+                <div className='container-sectores'>
+                    <p>Sector:</p>
                     <Dropdown className='dropdown-sectores'>
                         <Dropdown.Toggle>
                             {selectedSector}

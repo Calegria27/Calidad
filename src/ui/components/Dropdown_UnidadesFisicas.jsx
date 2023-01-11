@@ -48,8 +48,9 @@ const Dropdown_UnidadesFisicas = (props) => {
     return (
         <div>
             {object.Sector !== "" &&
-                <div className="dropdown-unidades">
-                    <Dropdown >
+                <div className="container-unidades">
+                    <p>Unidades:</p>
+                    <Dropdown className="dropdown-unidades">
                         <Dropdown.Toggle>
                             {selecteduFisica}
                         </Dropdown.Toggle>

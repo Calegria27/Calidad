@@ -13,40 +13,77 @@
     -webkit-text-size-adjust: 100%;
   }
 
+
 .navbar{
     width: 100%;
 }
 
-.container-tittle{
-    color:black;
-    border: 1px solid black;
+.tittle-checklist{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.container-dropdown{
-    width: 95%;
-    align-items: left;
+.tittle-cartilla{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container-tittle{
+    color:black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container-empresas p{
+    padding-top: 5px;
+}
+.container-empresas{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
     display: flex;
 }
 
 .dropdown-empresa{
-    padding:10px 10px 10px 10px;
-
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 19px;
+    padding-right: 10px;
 }
-
+.container-obras{
+    display: flex;
+}
+.container-obras p{
+    padding-top: 17px;
+    align-items: center;
+}
 .dropdown-obras{
     display: flex;
-    padding:10px 10px 10px 10px;
+   padding-left: 10px;
+   padding-top: 10px;
 
 
 }
-
+.container-sectores{
+    display: flex;
+}
+.container-sectores p{
+    padding-left: 15px;
+    padding-top: 7px;
+}
 .dropdown-sectores{
     display: flex;
     align-items: left;
     padding-left: 10px;
+    padding-bottom: 30px;
     
     
 
+}
+
+.container-unidades{
+    display:flex;
 }
 
 .dropdown-unidades{
@@ -59,27 +96,86 @@
 }
 
 
-@media (max-width: 600px) {
- 
-        .dropdown-empresa{
-            display:list-item;
-        }
-
-}
 .container-cartillatarifado{
     padding: 10px 10px 10px 10px;
-    border: 1px solid red;
 }
 .container-cartilla{
     display: flex;
-    border: 1px solid blue;
+    justify-content: center;
+    align-items: center;
 }
 
 .container-tarifado{
     display: flex;
-    border: 1px solid blue;
+    justify-content: center;
+    align-items: center;
 }
 
 .dropdown-cartillas{
     padding-left: 20px;
+}
+
+.dropdown-tarifados{
+    padding-left: 70px;
+}
+
+.container-button-alerta{
+    padding: 10px 10px 10px 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-partida{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 10px 10px 10px;
+}
+
+
+.button-partida-admin{
+    padding: 10px 10px 10px 10px;
+}
+
+.container-table{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Table{
+    width:50%;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@media (max-width: 400px) {
+
+    .container-empresas{
+        width: 100%;
+        display: block;
+    }
+    .container-obras{
+        display: block;
+    }
+    .container-sectores{
+        display: block;
+    }
+    .container-unidades{
+        display:block;
+    }
+    .container-modelos{
+        display:block;
+        padding-left: 20px;
+    }
+    .navbar{
+        width: 100%;
+    }
+
+    .dropdown-empresa{
+        display:list-item;
+    }
+ 
+
 }

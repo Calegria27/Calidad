@@ -11,12 +11,19 @@ const Dropdown_cartilla = (props) => {
     const [dataCartilla, setDataCartilla] = useState("")
     const url = "http://192.168.1.17/user/cartillacontrol"
 
+
+
     useEffect(() => {
         axios.post(url, { CtoEmpresa: object.CtoEmpresa, CtoCodigo: object.CtoCodigo, Sector: object.Sector, uFisica: object.uFisica })
             .then((response) => {
             setDataCartilla(response.data)
             });
     }, []);
+    
+    useEffect(() => {
+        setFinalSelectedValue("")
+        console.log(object)
+    }, [object.CtoEmpresa]);
 
     const data_tf={ CtoEmpresa: object.CtoEmpresa, CtoCodigo: object.CtoCodigo, Sector: object.Sector, uFisica: object.uFisica ,Cartilla:selectedCartilla,setFinalSelectedValue:setFinalSelectedValue}
 
@@ -36,6 +43,9 @@ const Dropdown_cartilla = (props) => {
     }
     return (
         <div className='container-cartillatarifado'>
+            <div className="tittle-cartilla">
+                <h2>SELECCIONE CARTILLAS CONTROL DE CALIDAD</h2>
+            </div>
             <div className='container-cartilla'>
                 <p>Cartilla Control de Calidad:</p>
                 <Dropdown className='dropdown-cartillas'>

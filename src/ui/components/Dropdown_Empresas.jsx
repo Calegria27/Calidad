@@ -42,7 +42,8 @@ const Dropdown_Empresas = (props) => {
 
 
     return (
-            <div className='container-dropdown'>
+            <div className='container-empresas'>
+                <p>Empresa:</p>
                 <Dropdown className='dropdown-empresa'>
                     <Dropdown.Toggle title={selectedEmpresa} variant="success" id="dropdown-basic">
                         {selectedOptionName}

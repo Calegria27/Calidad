@@ -45,7 +45,8 @@ const Dropdown_Obras = (props) => {
         : null;
 
     return (
-        <div>
+        <div className='container-obras'>
+            <p>Obras:</p>
             <div className='dropdown-obras'>
                 <Dropdown >
                     <Dropdown.Toggle variant="success" id="dropdown-basic">

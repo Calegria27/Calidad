@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Authcontext } from '../../Auth/context/Authcontext';
+import Button from 'react-bootstrap/Button';
 
 
 export const Navbar = () => {
@@ -18,25 +19,13 @@ export const Navbar = () => {
     return (
         <nav className="navbar navbar-expand-sm navbar-dark bg-dark p-3">
             
-            <h1 
-                className="navbar-brand" 
-                to="/login"
-            >
-                Sistema Calidad Independencia
-            </h1>
+            <img src="https://www.cindependencia.cl/wp-content//themes/independencia/assets/img/logo-new-independencia.png"width="270" height="60"/>
 
 
-
-            <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end">
-                <button className="navbar-nav ml-auto"
-                onClick={onLogout}>
-                    <span 
-                        className="nav-item nav-link" 
-                        
-                    >
-                        Logout
-                    </span>
-                </button>
+            <div className="navbar-collapse justify-content-end">
+                <Button  variant="danger" className="navbar-logout"onClick={onLogout}>
+                    Logout
+                </Button>
             </div>
         </nav>
     )
