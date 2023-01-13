@@ -38,7 +38,7 @@ const Dropdown_Obras = (props) => {
     const obras = dataobras
         ? Object.entries(dataobras).map(([key, value]) => (
 
-            <Dropdown.Item key={key} onClick={() => handleOptionClickObra(dataobras[key]["CtoCodigo"], dataobras[key]["Obras"])}
+            <Dropdown.Item style={{height:"30px"}} key={key} onClick={() => handleOptionClickObra(dataobras[key]["CtoCodigo"], dataobras[key]["Obras"])}
             >{`${dataobras[key]["CtoCodigo"]}: ${dataobras[key]["Obras"]}`}</Dropdown.Item>
         ))
 
@@ -47,8 +47,7 @@ const Dropdown_Obras = (props) => {
     return (
         <div className='container-obras'>
             <p>Obras:</p>
-            <div className='dropdown-obras'>
-                <Dropdown >
+                <Dropdown style={{height:"70px"}} className='dropdown-obras'>
                     <Dropdown.Toggle variant="success" id="dropdown-basic">
                         {selectedOptionNameObra}
                     </Dropdown.Toggle>
@@ -57,7 +56,6 @@ const Dropdown_Obras = (props) => {
                     </Dropdown.Menu>
                 </Dropdown>
                 <Dropdown_Sectores object={data_Sectores} />
-            </div>
         </div>
   
     )

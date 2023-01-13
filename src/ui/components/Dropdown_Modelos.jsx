@@ -47,7 +47,7 @@ const Modelos = (props) => {
 
     const modelo = dataModelo&& dataModelo[0] 
         ? Object.entries(dataModelo).map(([i, modelo]) => (
-            <Form.Group className="mb-3" key={i}>
+            <Form.Group className="modelos mb-3" key={i}>
                 <Form.Control placeholder={`${modelo["CodMaeVivienda"]}`} disabled />
             </Form.Group>
         ))

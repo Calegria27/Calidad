@@ -42,10 +42,10 @@ const Dropdown_Tarifado = (props) => {
     return (
         <div>
             <Dropdown  className='dropdown-tarifados'>
-                <Dropdown.Toggle>
+                <Dropdown.Toggle style={{height:"45px"}}>
                     {selectedTarifadoName}
                 </Dropdown.Toggle>
-                <Dropdown.Menu>
+                <Dropdown.Menu style={{ overflowY: 'scroll', maxHeight: '200px' }} >
                     {tarifado}
                 </Dropdown.Menu>
             </Dropdown>

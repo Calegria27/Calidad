@@ -20,10 +20,10 @@ export default function (props) {
     UsuPass: ''
   })
 
-  const onlogin=(user)=>{
+  const onlogin = (user) => {
     login(user);
-    navigate('/home',{
-      replace:true
+    navigate('/home', {
+      replace: true
     });
   }
 
@@ -34,62 +34,62 @@ export default function (props) {
       ...form,
       [name]: value
     })
-    
+
   }
 
   const iniciarSesion = (e) => {
     e.preventDefault();
-    const data={Usu_Cuenta: form.UsuCuenta, Usu_Password:form.UsuPass}
-    
-    axios.post(baseUrl,data)
-    .then((response)=>{
-      if(response.data.length==0){
-        window.alert("Usuario o contraseña equivocado");
-      } else{
-        onlogin(response.data[0]["Usu_Cuenta"])
-      }
-      
-      
-      
-    })
-    
-  
+    const data = { Usu_Cuenta: form.UsuCuenta, Usu_Password: form.UsuPass }
+
+    axios.post(baseUrl, data)
+      .then((response) => {
+        if (response.data.length == 0) {
+          window.alert("Usuario o contraseña equivocado");
+        } else {
+          onlogin(response.data[0]["Usu_Cuenta"])
+        }
+
+
+
+      })
+
+
   }
 
 
   return (
-    <div className="mx-auto center w-25 p-3 Auth-form-container ">
-      <form className="Auth-form">
-        <div className="Auth-form-content">
-          <h3 className="text-center Auth-form-title">Iniciar sesión</h3>
-          <div className="form-group mt-3">
-            <label>Email address</label>
-            <input
-              type="text"
-              className="form-control mt-1"
-              placeholder="Ingrese usuario"
-              name="UsuCuenta"
-              onChange={handleChange}
-            />
+    <div className="container-login">
+      <div className="mx-auto center  Auth-form-container ">
+        <form className="Auth-form">
+          <div className="Auth-form-content">
+            <h3 className="text-center Auth-form-title">Iniciar Sesión</h3>
+            <div className="form-group mt-3">
+              <input
+                type="text"
+                className="form-control mt-1"
+                placeholder="Ingrese usuario"
+                name="UsuCuenta"
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group mt-3">
+              <input
+                type="password"
+                className="form-control mt-1"
+                placeholder="Ingrese contraseña"
+                name="UsuPass"
+                onChange={handleChange}
+              />
+            </div>
+            <div className="btn-container d-grid gap-2 mt-3">
+              <button className="btn btn-primary"
+                onClick={iniciarSesion}>
+                Ingresar
+              </button>
+            </div>
           </div>
-          <div className="form-group mt-3">
-            <label>Password</label>
-            <input
-              type="password"
-              className="form-control mt-1"
-              placeholder="Ingrese contraseña"
-              name="UsuPass"
-              onChange={handleChange}
-            />
-          </div>
-          <div className="d-grid gap-2 mt-3">
-            <button className="btn btn-primary"
-              onClick={iniciarSesion}>
-              Submit
-            </button>
-          </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   )
 }

@@ -33,7 +33,7 @@ const Dropdown_Sectores = (props) => {
       const sectores = datasectores
     ? Object.entries(datasectores).map(([key, value]) => (
 
-      <Dropdown.Item key={key} onClick={() => handleOptionClickSector(datasectores[key]["Sector"])}
+      <Dropdown.Item style={{height:"30px"}} key={key} onClick={() => handleOptionClickSector(datasectores[key]["Sector"])}
       >{`${datasectores[key]["Sector"]}`}</Dropdown.Item>
     ))
 
@@ -46,7 +46,7 @@ const Dropdown_Sectores = (props) => {
             {object.isVisible &&
                 <div className='container-sectores'>
                     <p>Sector:</p>
-                    <Dropdown className='dropdown-sectores'>
+                    <Dropdown style={{heigh:"70px"}} className='dropdown-sectores'>
                         <Dropdown.Toggle>
                             {selectedSector}
                         </Dropdown.Toggle>

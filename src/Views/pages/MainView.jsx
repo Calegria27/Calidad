@@ -26,10 +26,7 @@ const MainView = () => {
       <Dropdown_Empresas setSelectedValue={setSelectedValue} />
       {selectedValue !== ""
         &&
-        <div>
           <Dropdown_cartilla object={selectedValue} setFinalSelectedValue={setFinalSelectedValue} />
-        </div>
-
       }
       {finalSelectedValue !== "" &&
         <div>

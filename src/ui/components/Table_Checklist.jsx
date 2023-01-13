@@ -33,7 +33,7 @@ const Table_Checklist = (props) => {
 
     const elements = dataTarifado
         ? Object.entries(dataTarifado).map(([key, value]) => (
-            <Table className='Table' style={{ width: "90%" }} key={key} responsive
+            <Table className='Table' style={{ width: "100%",height:"100%" }} key={key} responsive
                 striped bordered hover variant="dark" >
                 <thead>
                     <tr>

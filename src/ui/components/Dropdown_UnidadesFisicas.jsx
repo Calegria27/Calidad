@@ -17,7 +17,7 @@ const Dropdown_UnidadesFisicas = (props) => {
     const unidadesFisicas = dataUfisica
     ? Object.entries(dataUfisica).map(([key, value]) => (
 
-      <Dropdown.Item key={key} onClick={() => handleOptionUfisica(dataUfisica[key]["unidadfisica"])}
+      <Dropdown.Item style={{height:"30px"}} key={key} onClick={() => handleOptionUfisica(dataUfisica[key]["unidadfisica"])}
       >{`${dataUfisica[key]["unidadfisica"]}`}</Dropdown.Item>
     ))
 

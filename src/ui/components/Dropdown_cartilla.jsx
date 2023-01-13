@@ -31,7 +31,7 @@ const Dropdown_cartilla = (props) => {
         ? Object.entries(dataCartilla).map(([key, value]) => (
 
 
-            <Dropdown.Item key={key} onClick={() => handleOptionCartilla(dataCartilla[key]["codigo_cartilla"],dataCartilla[key]["Expr1"])}
+            <Dropdown.Item style={{height:"30px"}} key={key} onClick={() => handleOptionCartilla(dataCartilla[key]["codigo_cartilla"],dataCartilla[key]["Expr1"])}
             >{`${dataCartilla[key]["Expr1"]}`}</Dropdown.Item>
         ))
         : null;
@@ -49,10 +49,10 @@ const Dropdown_cartilla = (props) => {
             <div className='container-cartilla'>
                 <p>Cartilla Control de Calidad:</p>
                 <Dropdown className='dropdown-cartillas'>
-                    <Dropdown.Toggle>
+                    <Dropdown.Toggle style={{height:"45px"}}>
                         {selectedCartillaName}
                     </Dropdown.Toggle>
-                    <Dropdown.Menu>
+                    <Dropdown.Menu style={{ overflowY: 'scroll', maxHeight: '200px' }}>
                         {cartilla}
                     </Dropdown.Menu>
                 </Dropdown>

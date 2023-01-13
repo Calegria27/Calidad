@@ -1,11 +1,10 @@
 * {
+    box-sizing: border-box;
+    height: 100%;
     font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
     font-size: 16px;
-    line-height: 24px;
     font-weight: 400;
-  
     color-scheme: light dark;
-  
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -13,36 +12,91 @@
     -webkit-text-size-adjust: 100%;
   }
 
+@keyframes pan{
+    100%{ background-position: 15% 50%;}
+}
 
+.container-login{
+    display: grid;
+    height: 100%;
+    place-items: center;
+    margin:0;
+    padding: 0 24px;
+    background-image: url("./assets/downloads/low-poly-grid-haikei3.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: pan 6s infinite alternate linear;
+}
+
+.Auth-form-container{
+    height: 50%;
+    width: 25%
+}
+
+.Auth-form{
+    display: grid;
+
+}
+
+.Auth-form-content{
+    align-items: center;
+    justify-content: center;
+}
+
+.Auth-form-title{
+    height: 10%;
+}
+
+.form-group {
+    display: flex;
+    height: 10%;
+}
+.form-group p{
+    padding-right: 3%;
+    padding-top: 3%;
+    width:20%;
+}
+
+.btn-container{
+    height: 50px;
+
+}
 .navbar{
     width: 100%;
+    height: 9%;
 }
 
 .tittle-checklist{
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 45px;
 }
 
 .tittle-cartilla{
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 50px;
 }
 .container-tittle{
     color:black;
     display: flex;
     align-items: center;
     justify-content: center;
+    height:40px;
 }
-.container-empresas p{
-    padding-top: 5px;
-}
+
 .container-empresas{
     width: 100%;
+    height:80px;
     align-items: center;
     justify-content: center;
     display: flex;
+}
+
+.container-empresas p{
+    padding-top: 30px;
 }
 
 .dropdown-empresa{
@@ -50,34 +104,37 @@
     padding-top: 10px;
     padding-bottom: 19px;
     padding-right: 10px;
+    
 }
 .container-obras{
     display: flex;
 }
 .container-obras p{
-    padding-top: 17px;
-    align-items: center;
+    padding-top: 20px;
 }
 .dropdown-obras{
-    display: flex;
-   padding-left: 10px;
-   padding-top: 10px;
+    padding-left: 10px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+
 
 
 }
 .container-sectores{
     display: flex;
+
 }
 .container-sectores p{
     padding-left: 15px;
-    padding-top: 7px;
+    padding-top: 25px;
 }
 .dropdown-sectores{
     display: flex;
     align-items: left;
     padding-left: 10px;
-    padding-bottom: 30px;
-    
+    padding-bottom: 20px;
+    padding-top: 15px;
     
 
 }
@@ -88,41 +145,65 @@
 
 .dropdown-unidades{
     display: flex;
+    align-items: left;
     padding-left: 10px;
+    padding-bottom: 20px;
+    padding-top: 15px;
 }
-.dropdown-modelos{
+.modelos{
     display: flex;
+    align-items: left;
     padding-left: 10px;
+    padding-bottom: 20px;
+    padding-top: 15px;
 }
 
 
 .container-cartillatarifado{
-    padding: 10px 10px 10px 10px;
+    height: 200px ;
 }
 .container-cartilla{
+    padding-top: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 70px;
 }
 
-.container-tarifado{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 
 .dropdown-cartillas{
     padding-left: 20px;
 }
 
+.container-cartilla p{
+    padding-top: 19px;
+}
+
+.container-tarifado{
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+
+}
+
+
 .dropdown-tarifados{
     padding-left: 70px;
 }
+
+.container-tarifado p{
+    padding-top: 19px;
+}
+
 
 .container-button-alerta{
     padding: 10px 10px 10px 10px;
     align-items: center;
     justify-content: center;
+    height:100px
 }
 
 .button-partida{
@@ -130,6 +211,7 @@
     align-items: center;
     justify-content: center;
     padding: 10px 10px 10px 10px;
+    width: 100%;
 }
 
 
@@ -141,6 +223,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    height:120px
 }
 
 .Table{

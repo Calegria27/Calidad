@@ -32,7 +32,7 @@ const Dropdown_Empresas = (props) => {
     const empresas = dataempresas
         ? Object.entries(dataempresas).map(([key, value]) => (
 
-            <Dropdown.Item key={key} onClick={() => handleOptionClick(dataempresas[key]["empCodigo"], dataempresas[key]["empNombre"])}
+            <Dropdown.Item style={{height:"30px"}} key={key} onClick={() => handleOptionClick(dataempresas[key]["empCodigo"], dataempresas[key]["empNombre"])}
             >{`${dataempresas[key]["empCodigo"]}: ${dataempresas[key]["empNombre"]}`}</Dropdown.Item>
         ))
 
@@ -44,8 +44,8 @@ const Dropdown_Empresas = (props) => {
     return (
             <div className='container-empresas'>
                 <p>Empresa:</p>
-                <Dropdown className='dropdown-empresa'>
-                    <Dropdown.Toggle title={selectedEmpresa} variant="success" id="dropdown-basic">
+                <Dropdown style={{height:"70px"}}className='dropdown-empresa'>
+                    <Dropdown.Toggle  variant="success" id="dropdown-basic">
                         {selectedOptionName}
                     </Dropdown.Toggle>
 
