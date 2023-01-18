@@ -44,7 +44,7 @@ const Dropdown_Empresas = (props) => {
     return (
             <div className='container-empresas'>
                 <p>Empresa:</p>
-                <Dropdown style={{height:"70px"}}className='dropdown-empresa'>
+                <Dropdown style={{height:"70px"}} className='dropdown-empresa'>
                     <Dropdown.Toggle  variant="success" id="dropdown-basic">
                         {selectedOptionName}
                     </Dropdown.Toggle>

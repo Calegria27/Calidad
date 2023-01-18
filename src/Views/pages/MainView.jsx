@@ -23,10 +23,12 @@ const MainView = () => {
       <div className="container-tittle">
         <h2>Usuario: {user}</h2>
       </div>
-      <Dropdown_Empresas setSelectedValue={setSelectedValue} />
+      <div className="container-dropdowns">
+        <Dropdown_Empresas setSelectedValue={setSelectedValue} />
+      </div>
       {selectedValue !== ""
         &&
-          <Dropdown_cartilla object={selectedValue} setFinalSelectedValue={setFinalSelectedValue} />
+        <Dropdown_cartilla object={selectedValue} setFinalSelectedValue={setFinalSelectedValue} />
       }
       {finalSelectedValue !== "" &&
         <div>

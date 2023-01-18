@@ -70,8 +70,8 @@ const Table_Checklist = (props) => {
                 <div className='button-partida' >
                     <Button onClick={aprobarPartida} variant="success">Aprobar Partida</Button>{' '}
                 </div>
-                <Alerta show={error} onHide={() => setError(false)} />
             </div>
+            <Alerta show={error} onHide={() => setError(false)} />
         </div>
 
     )
