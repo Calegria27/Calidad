@@ -8,7 +8,8 @@ function Alerta(props) {
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered="true"
-      style={{height:"700px"}}
+      style={{height:"500px"}}
+      responsive
     >
       <Modal.Header style={{height:"100px"}}closeButton>
         <Modal.Title centered="true" id="contained-modal-title-vcenter">

@@ -128,6 +128,7 @@
 }
 .container-obras p{
     padding-top: 20px;
+    justify-content: center;
 }
 .dropdown-obras{
     padding-left: 10px;
@@ -249,6 +250,10 @@
     justify-content: center;
 }
 
+.fade.modal.show {
+    height: 100%;
+  }
+
 
 @media (max-width: 600px) {
 
@@ -321,6 +326,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        height: 70px;
 
 
     }
@@ -341,8 +347,13 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        height:40px;
+        height:50px;
             }
+
+    .container-tittle h2{
+        padding-top: 20px;
+      
+    }
     
     .container-empresas{
         width: 100%;
@@ -430,7 +441,7 @@
     
     .container-cartillatarifado{
         padding-top:100px;
-        height: 500px ;
+        height: 400px ;
     }
     .container-cartilla{
         padding-top: 20px;
@@ -456,14 +467,23 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
-        height: 70px;
-    
+        align-content: center;
+        height: 150px;    
     }
     
     
     .dropdown-tarifados{
-        padding-left: 70px;
+        width: 100%;
+        background-color: red;
+        display: grid;
+        place-items: center;
+        
+ 
+        
+    }
+
+    #Dropdown-toggle{
+        width:300px;
     }
     
     .container-tarifado p{
@@ -474,8 +494,7 @@
     
     .container-button-alerta{
         padding: 10px 10px 10px 10px;
-        align-items: center;
-        justify-content: center;
+  
         height:100px
     }
     
@@ -488,15 +507,12 @@
     }
     
     
-    .button-partida-admin{
-        padding: 10px 10px 10px 10px;
-    }
     
     .container-table{
         display: flex;
         align-items: center;
         justify-content: center;
-        height:120px
+        height:200px
     }
     
     .Table{
@@ -505,5 +521,8 @@
         justify-content: center;
     }
     
+    .fade.modal.show {
+        height: 100%;
+      }
 
 }

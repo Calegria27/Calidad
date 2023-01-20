@@ -25,7 +25,8 @@ const Dropdown_Tarifado = (props) => {
 
     const tarifado = dataTarifado
         ? Object.entries(dataTarifado).map(([key, value]) => (
-            <Dropdown.Item key={key} onClick={() => handleOptionTarifado(dataTarifado[key]["codtarifado"], dataTarifado[key]["TARIFADO"])}
+            <Dropdown.Item key={key} 
+            onClick={() => handleOptionTarifado(dataTarifado[key]["codtarifado"], dataTarifado[key]["TARIFADO"])}
             >{`${dataTarifado[key]["TARIFADO"]}`}</Dropdown.Item>
         ))
         : null;
@@ -40,9 +41,12 @@ const Dropdown_Tarifado = (props) => {
     }
 
     return (
-        <div>
-            <Dropdown  className='dropdown-tarifados'>
-                <Dropdown.Toggle style={{height:"45px"}}>
+        <div className='dropdown-tarifados'>
+            <Dropdown  >
+                <Dropdown.Toggle id="Dropdown-toggle"style={{height:"45px",
+                 overflow: 'hidden',
+                            textOverflow: 'ellipsis',
+                            whiteSpace: 'nowrap'}}>
                     {selectedTarifadoName}
                 </Dropdown.Toggle>
                 <Dropdown.Menu style={{ overflowY: 'scroll', maxHeight: '200px' }} >
